@@ -14,32 +14,32 @@ public class Calcular extends AppCompatActivity {
         setContentView(R.layout.activity_calcular);
 
     }
-
+    int pr(){
+        EditText primero=(EditText) findViewById(R.id.primerNumero);
+        int pr=Integer.parseInt(primero.getText().toString());
+        return pr;
+    }
+    int se(){
+        EditText segundo=(EditText) findViewById(R.id.segundoNumero);
+        int se=Integer.parseInt(segundo.getText().toString());
+        return se;
+    }
+    TextView r(){
+        TextView resultado=(TextView) findViewById(R.id.resultado);
+        return resultado;
+    }
 
 
     public void sumar(View vista){
-        EditText primero=(EditText) findViewById(R.id.primerNumero);
-        EditText segundo=(EditText) findViewById(R.id.segundoNumero);
-        TextView resultado=(TextView) findViewById(R.id.resultado);
-        int pr=Integer.parseInt(primero.getText().toString());
-        int se=Integer.parseInt(segundo.getText().toString());
-        resultado.setText(Integer.toString(pr + se));
+        r().setText(Integer.toString(pr() + se()));
 
     }
 
     public void restar(View vista){
-        EditText primero=(EditText) findViewById(R.id.primerNumero);
-        EditText segundo=(EditText) findViewById(R.id.segundoNumero);
-        TextView resultado=(TextView) findViewById(R.id.resultado);
-        int pr=Integer.parseInt(primero.getText().toString());
-        int se=Integer.parseInt(segundo.getText().toString());
-       resultado.setText(Integer.toString(pr-se));
+        r().setText(Integer.toString(pr() - se()));
     }
 
     public void convertir(View vista){
-        EditText primero=(EditText) findViewById(R.id.primerNumero);
-        TextView resultado=(TextView) findViewById(R.id.resultado);
-        int pr=Integer.parseInt(primero.getText().toString());
-        resultado.setText(Double.toString((pr*1.8)+32)+"°F");
+        r().setText(Double.toString((pr()*1.8)+32)+"°F");
     }
 }
